@@ -32,7 +32,7 @@ export class SeekerAccount extends Model {
 
   @Column({
     type: DataType.STRING,
-    allowNull: false,
+    allowNull: true,
   })
   password: string;
 

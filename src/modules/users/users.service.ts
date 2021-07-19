@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { EMPLOYER_REPOSITORY, WORKER_REPOSITORY } from 'src/core/constants';
+import { COMPANY_REPOSITORY, SEEKER_REPOSITORY } from 'src/core/constants';
 import { EmployerDto } from './dto/employer.dto';
 import { WorkerDto } from './dto/worker.dto';
 import { Employer } from './entities/employer.entity';
@@ -8,8 +8,8 @@ import { Worker } from './entities/worker.entity';
 @Injectable()
 export class UsersService {
   constructor(
-    @Inject(WORKER_REPOSITORY) private readonly workerRepository: typeof Worker,
-    @Inject(EMPLOYER_REPOSITORY)
+    @Inject(SEEKER_REPOSITORY) private readonly workerRepository: typeof Worker,
+    @Inject(COMPANY_REPOSITORY)
     private readonly employerRepository: typeof Employer,
   ) {}
 

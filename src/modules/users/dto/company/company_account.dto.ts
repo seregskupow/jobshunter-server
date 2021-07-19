@@ -1,17 +1,16 @@
 import {
   IsEmail,
   IsNotEmpty,
-  IsOptional,
   IsString,
   MaxLength,
   MinLength,
 } from 'class-validator';
 
-export class SeekerAccountDto {
+export class CompanyAccountDto {
   @IsNotEmpty()
-  @IsString({ message: 'Должно быть строкой' })
-  @MinLength(6)
-  @MaxLength(25)
+  @IsString({ message: 'Value must be a string' })
+  @MinLength(3)
+  @MaxLength(50)
   readonly name: string;
 
   @IsNotEmpty()
@@ -19,7 +18,7 @@ export class SeekerAccountDto {
   @IsEmail()
   readonly email: string;
 
-  @IsOptional()
+  @IsNotEmpty()
   @IsString({ message: 'Должно быть строкой' })
-  readonly password?: string;
+  readonly password: string;
 }
